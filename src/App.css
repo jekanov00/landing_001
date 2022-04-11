@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Zen+Kurenaido&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f6f7f9;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 60px;
+}
+
+a:focus {
+  outline: none;
+}
+
+button {
+  text-decoration: none;
+  border: 1px solid #1b262b;
+  font-family: inherit;
+  font-size: 18px;
+  background-color: #f6f7f9;
+  color: #000000;
+  padding: 17px 35px;
+  border-radius: 5px;
+}
+
+button:active {
+  box-shadow: inset 5px 5px 30px -2px rgba(0, 0, 0, 0.38);
+}
+
+.header {
+  color: #f6f7f9;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 1s;
+}
+
+.header-logo {
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-size: 40px;
+  letter-spacing: 10px;
+  padding: 25px 40px 35px;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  text-align: center;
+}
+
+.menu-list > li {
+  padding: 40px 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-list > li::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #f6f7f9;
+  bottom: 30px;
+  transition: width cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s;
+}
+
+.menu-list > li:hover::before {
+  width: calc(100% - 60px);
+  background-color: var(--bcolor);
+}
+
+.menu-underline::before {
+  width: calc(100% - 60px) !important;
+  background-color: var(--bcolor) !important;
+}
+
+.main {
+  position: relative;
+}
+
+.main > * {
+  padding: 160px 130px 60px;
+  height: 100vh;
+}
+
+.social {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 60px;
+  display: flex;
+  border-right: 2px solid #f6f7f9;
+  flex-direction: column;
+  padding: 0;
+  z-index: 1001;
+  height: auto;
+  transition: all 0.5s;
+}
+
+.social-link {
+  padding: 15px 30px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.5s;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  box-sizing: content-box;
+  color: inherit;
+}
+
+.social-link:first-child {
+  margin-top: auto;
+}
+
+.toTop {
+  position: fixed;
+  right: 0;
+  bottom: 60px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid #f6f7f9;
+  padding: 0;
+  z-index: 1001;
+  height: auto;
+  min-width: 83px;
+  transition: all 0.5s;
+}
+
+.toTop-link {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  display: flex;
+  text-decoration: none;
+  color: #f6f7f9;
+  margin-top: auto;
+  transition: all 0.5s;
+}
+
+.toTop-link > * {
+  padding: 10px 30px;
+}
+
+.toTop-arrow {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.home {
+  background: url(./img/cove.jpg) no-repeat center center #1b262b;
+  background-size: cover;
+  color: #f6f7f9;
+  position: relative;
+}
+
+.home-text {
+  width: 40vw;
+  margin-top: 15vh;
+  line-height: 80px;
+  position: relative;
+}
+
+.home-button {
+  margin-top: 60px;
+}
+
+.credits {
+  position: absolute;
+  bottom: 60px;
+  right: 130px;
+  text-transform: capitalize;
+}
+
+.timer {
+  background: url(./img/stairs.jpg) no-repeat center center #7c7566;
+  background-size: cover;
+  color: #f6f7f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.timer-time {
+  display: flex;
+  justify-content: space-between  ;
+  padding-top: 17vh;
+}
+
+.timer-time-container {
+  margin: 0 20px;
+}
+
+.timer-time-container-date {
+  font-size: 60px;
+  font-weight: 200;
+}
+
+.timer-time-container-text {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+.timer-text {
+  margin: 70px 0;
+  font-size: 50px;
+  font-weight: 300;
+  max-width: 70vw;
+}
+
+.timer-button,
+.contact-form-submit {
+  background-color: #0059e6;
+  border-color: #014bc2;
+  color: #f6f7f9;
+}
+
+.whatWeDo {
+  background: url(./img/waterfall.jpg) no-repeat center center #565656;
+  background-size: cover;
+  color: #f6f7f9;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25vh;
+  position: relative;
+  z-index: 10;
+}
+
+.whatWeDo::before,
+.timer::before,
+.home::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.whatWeDo > *,
+.home > *,
+.timer > * {
+  z-index: 12;
+}
+
+.whatWeDo-text {
+  width: 45%;
+  max-width: 45%;
+}
+
+.whatWeDo-text-header {
+  font-size: 50px;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+.whatWeDo-text-paragraph {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.whatWeDo-iconContainer {
+  max-width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 25px;
+  margin-right: 100px;
+}
+
+.whatWeDo-iconContainer-icons {
+  min-width: 200px;
+}
+
+.whatWeDo-iconContainer-icons-image,
+.contact-icons-container-image {
+  font-size: 70px;
+  text-align: left;
+  margin-bottom: 30px;
+  width: 70px;
+  height: 70px;
+}
+
+.contact {
+  color: #000000;
+}
+
+.contact-text-header {
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-size: 60px;
+}
+
+.contact-text-paragraph {
+  margin-top: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  max-width: 45%;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+
+.contact-icons {
+  max-width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-icons-container {
+  margin-top: 60px;
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+.contact-icons-container-image {
+  color: #0059e6;
+}
+
+.contact-icons-container-text {
+  line-height: 30px;
+}
+
+.contact-form {
+  max-width: 45%;
+  margin-top: 60px;
+  padding-right: 100px;
+}
+
+.contact-form input,
+.contact-form #message {
+  line-height: 40px;
+  padding: 0 10px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+}
+
+.contact-form input#name {
+  width: 49%;
+  margin-right: 2%;
+}
+
+.contact-form input#email {
+  width: 49%;
+}
+
+.contact-form input#subject {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.contact-form #message {
+  margin-top: 20px;
+  width: 100%;
+  height: 250px;
+  resize: none;
+  line-height: 20px;
+  padding: 10px;
+}
+
+.contact-form-submit {
+  margin-top: 40px;
+}
