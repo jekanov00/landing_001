@@ -7,9 +7,10 @@ import './App.css';
 
 function App() {
   const home = 0;
-  const construction = window.innerHeight;
-  const what = window.innerHeight * 2;
-  const contact = window.innerHeight * 3;
+  const construction =
+    document.getElementById('construction').getBoundingClientRect().top + window.scrollY;
+  const what = document.getElementById('what').getBoundingClientRect().top + window.scrollY;
+  const contact = document.getElementById('contact').getBoundingClientRect().top + window.scrollY;
 
   const [isBlack, setIsBlack] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -81,6 +82,68 @@ function App() {
               style={isBlack ? { '--bcolor': '#000000' } : { '--bcolor': '#f6f7f9' }}
               onClick={() => window.scrollTo(0, contact)}>
               Contact
+            </li>
+          </ul>
+          <ul className="menu-phone">
+            <li
+              className={isUnderline === 'home' ? 'menuActive' : ''}
+              style={
+                isBlack
+                  ? { '--backColor': '#000000', '--iconColor': '#f6f7f9' }
+                  : { '--backColor': '#f6f7f9', '--iconColor': '#000000' }
+              }
+              onClick={() => window.scrollTo(0, home)}>
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69M12 3L2 12H5V20H11V14H13V20H19V12H22"
+                />
+              </svg>
+            </li>
+            <li
+              className={isUnderline === 'construction' ? 'menuActive' : ''}
+              style={
+                isBlack
+                  ? { '--backColor': '#000000', '--iconColor': '#f6f7f9' }
+                  : { '--backColor': '#f6f7f9', '--iconColor': '#000000' }
+              }
+              onClick={() => window.scrollTo(0, construction)}>
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M13.78 15.3L19.78 21.3L21.89 19.14L15.89 13.14L13.78 15.3M17.5 10.1C17.11 10.1 16.69 10.05 16.36 9.91L4.97 21.25L2.86 19.14L10.27 11.74L8.5 9.96L7.78 10.66L6.33 9.25V12.11L5.63 12.81L2.11 9.25L2.81 8.55H5.62L4.22 7.14L7.78 3.58C8.95 2.41 10.83 2.41 12 3.58L9.89 5.74L11.3 7.14L10.59 7.85L12.38 9.63L14.2 7.75C14.06 7.42 14 7 14 6.63C14 4.66 15.56 3.11 17.5 3.11C18.09 3.11 18.61 3.25 19.08 3.53L16.41 6.2L17.91 7.7L20.58 5.03C20.86 5.5 21 6 21 6.63C21 8.55 19.45 10.1 17.5 10.1Z"
+                />
+              </svg>
+            </li>
+            <li
+              className={isUnderline === 'what' ? 'menuActive' : ''}
+              style={
+                isBlack
+                  ? { '--backColor': '#000000', '--iconColor': '#f6f7f9' }
+                  : { '--backColor': '#f6f7f9', '--iconColor': '#000000' }
+              }
+              onClick={() => window.scrollTo(0, what)}>
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M17.5 14.33C18.29 14.33 19.13 14.41 20 14.57V16.07C19.38 15.91 18.54 15.83 17.5 15.83C15.6 15.83 14.11 16.16 13 16.82V15.13C14.17 14.6 15.67 14.33 17.5 14.33M13 12.46C14.29 11.93 15.79 11.67 17.5 11.67C18.29 11.67 19.13 11.74 20 11.9V13.4C19.38 13.24 18.54 13.16 17.5 13.16C15.6 13.16 14.11 13.5 13 14.15M17.5 10.5C15.6 10.5 14.11 10.82 13 11.5V9.84C14.23 9.28 15.73 9 17.5 9C18.29 9 19.13 9.08 20 9.23V10.78C19.26 10.59 18.41 10.5 17.5 10.5M21 18.5V7C19.96 6.67 18.79 6.5 17.5 6.5C15.45 6.5 13.62 7 12 8V19.5C13.62 18.5 15.45 18 17.5 18C18.69 18 19.86 18.16 21 18.5M17.5 4.5C19.85 4.5 21.69 5 23 6V20.56C23 20.68 22.95 20.8 22.84 20.91C22.73 21 22.61 21.08 22.5 21.08C22.39 21.08 22.31 21.06 22.25 21.03C20.97 20.34 19.38 20 17.5 20C15.45 20 13.62 20.5 12 21.5C10.66 20.5 8.83 20 6.5 20C4.84 20 3.25 20.36 1.75 21.07C1.72 21.08 1.68 21.08 1.63 21.1C1.59 21.11 1.55 21.12 1.5 21.12C1.39 21.12 1.27 21.08 1.16 21C1.05 20.89 1 20.78 1 20.65V6C2.34 5 4.18 4.5 6.5 4.5C8.83 4.5 10.66 5 12 6C13.34 5 15.17 4.5 17.5 4.5Z"
+                />
+              </svg>
+            </li>
+            <li
+              className={isUnderline === 'contact' ? 'menuActive' : ''}
+              style={
+                isBlack
+                  ? { '--backColor': '#000000', '--iconColor': '#f6f7f9' }
+                  : { '--backColor': '#f6f7f9', '--iconColor': '#000000' }
+              }
+              onClick={() => window.scrollTo(0, contact)}>
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M18.72,14.76C19.07,13.91 19.26,13 19.26,12C19.26,11.28 19.15,10.59 18.96,9.95C18.31,10.1 17.63,10.18 16.92,10.18C13.86,10.18 11.15,8.67 9.5,6.34C8.61,8.5 6.91,10.26 4.77,11.22C4.73,11.47 4.73,11.74 4.73,12A7.27,7.27 0 0,0 12,19.27C13.05,19.27 14.06,19.04 14.97,18.63C15.54,19.72 15.8,20.26 15.78,20.26C14.14,20.81 12.87,21.08 12,21.08C9.58,21.08 7.27,20.13 5.57,18.42C4.53,17.38 3.76,16.11 3.33,14.73H2V10.18H3.09C3.93,6.04 7.6,2.92 12,2.92C14.4,2.92 16.71,3.87 18.42,5.58C19.69,6.84 20.54,8.45 20.89,10.18H22V14.67H22V14.69L22,14.73H21.94L18.38,18L13.08,17.4V15.73H17.91L18.72,14.76M9.27,11.77C9.57,11.77 9.86,11.89 10.07,12.11C10.28,12.32 10.4,12.61 10.4,12.91C10.4,13.21 10.28,13.5 10.07,13.71C9.86,13.92 9.57,14.04 9.27,14.04C8.64,14.04 8.13,13.54 8.13,12.91C8.13,12.28 8.64,11.77 9.27,11.77M14.72,11.77C15.35,11.77 15.85,12.28 15.85,12.91C15.85,13.54 15.35,14.04 14.72,14.04C14.09,14.04 13.58,13.54 13.58,12.91A1.14,1.14 0 0,1 14.72,11.77Z"
+                />
+              </svg>
             </li>
           </ul>
         </nav>
@@ -159,7 +222,7 @@ function App() {
           </div>
           <div className="credits">&copy; 2018 Lana - All Rights Reserved</div>
         </section>
-        <section className="timer">
+        <section id="construction" className="timer">
           <div className="timer-time">
             <div className="timer-time-container">
               <div className="timer-time-container-date">
@@ -213,12 +276,12 @@ function App() {
               <p className="timer-time-container-text">Seconds</p>
             </div>
           </div>
-          <h3 className="timer-text">
+          <h1 className="timer-text">
             Our website is under construction. We'll be here soon with our new awesome site.
-          </h3>
+          </h1>
           <button className="timer-button">Learn more</button>
         </section>
-        <section className="whatWeDo">
+        <section id="what" className="whatWeDo">
           <article className="whatWeDo-text">
             <h2 className="whatWeDo-text-header">What we Do</h2>
             <p className="whatWeDo-text-paragraph">
@@ -282,7 +345,7 @@ function App() {
             </div>
           </article>
         </section>
-        <section className="contact">
+        <section id="contact" className="contact">
           <article className="contact-text">
             <h2 className="contact-text-header">Contact Us</h2>
             <p className="contact-text-paragraph">

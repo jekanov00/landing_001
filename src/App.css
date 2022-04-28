@@ -46,7 +46,7 @@ button:active {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1500;
   transition: all 1s;
 }
 
@@ -55,6 +55,10 @@ button:active {
   font-size: 40px;
   letter-spacing: 10px;
   padding: 25px 40px 35px;
+}
+
+.menu-phone {
+  display: none;
 }
 
 .menu-list {
@@ -95,9 +99,12 @@ button:active {
   position: relative;
 }
 
-.main > * {
+.home,
+.timer,
+.whatWeDo,
+.contact {
   padding: 160px 130px 60px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .social {
@@ -205,8 +212,8 @@ button:active {
 
 .timer-time {
   display: flex;
-  justify-content: space-between  ;
-  padding-top: 17vh;
+  justify-content: space-between;
+  padding-top: 12vh;
 }
 
 .timer-time-container {
@@ -272,6 +279,7 @@ button:active {
 .whatWeDo-text {
   width: 45%;
   max-width: 45%;
+  margin-right: 7%;
 }
 
 .whatWeDo-text-header {
@@ -291,7 +299,6 @@ button:active {
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 25px;
-  margin-right: 100px;
 }
 
 .whatWeDo-iconContainer-icons {
@@ -354,7 +361,7 @@ button:active {
 .contact-form {
   max-width: 45%;
   margin-top: 60px;
-  padding-right: 100px;
+  padding-right: 3%;
 }
 
 .contact-form input,
@@ -390,4 +397,154 @@ button:active {
 
 .contact-form-submit {
   margin-top: 40px;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 1280px) {
+  .home,
+  .timer,
+  .whatWeDo,
+  .contact {
+    padding-top: 150px;
+  }
+
+  .contact-icons-container {
+    flex-basis: 200px;
+  }
+
+  .whatWeDo-iconContainer {
+    max-width: 48%;
+  }
+
+  .whatWeDo-iconContainer-icons {
+    min-width: 0;
+    flex-basis: 164px;
+  }
+
+  .home-text {
+    width: 80%;
+  }
+
+  .contact-form {
+    margin-top: -85px;
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  h1,
+  .contact-text-header {
+    font-size: 50px;
+  }
+
+  .timer-text {
+    font-size: 43px;
+  }
+
+  .home-text h1 {
+    line-height: 65px;
+  }
+
+  .home-text {
+    width: 100%;
+  }
+
+  .contact-text-paragraph {
+    max-width: 70%;
+  }
+
+  .contact-container {
+    flex-wrap: wrap;
+  }
+
+  .contact-container > * {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-form {
+    margin-top: 80px;
+    padding-right: 70px;
+  }
+
+  .whatWeDo {
+    flex-wrap: wrap;
+  }
+
+  .whatWeDo > * {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .whatWeDo-text-paragraph {
+    max-width: 70%;
+  }
+
+  .whatWeDo-iconContainer {
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+
+  .whatWeDo-iconContainer-icons {
+    margin-top: 40px;
+    flex: 1 200px;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
+  .menu-phone {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-phone li {
+    padding: 31px 18px 20px;
+    cursor: pointer;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    position: relative;
+
+    transition: all 0.5s;
+  }
+
+  .menu-phone li::before,
+  .menu-phone li::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: top cubic-bezier(0.165, 0.84, 0.44, 1) 0.9s;
+  }
+
+  .menu-phone li::before {
+    left: -30px;
+    box-shadow: 15px -15px 0 var(--backColor);
+  }
+
+  .menu-phone li::after {
+    right: -30px;
+    box-shadow: -15px -15px 0 var(--backColor);
+  }
+
+  .menuActive {
+    background-color: var(--backColor);
+    color: var(--iconColor);
+  }
+
+  .menuActive::before,
+  .menuActive::after {
+    top: 0 !important;
+  }
+
+  .menu-phone svg {
+    width: 35px;
+    height: 35px;
+  }
 }
