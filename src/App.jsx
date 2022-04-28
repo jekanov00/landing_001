@@ -8,9 +8,14 @@ import './App.css';
 function App() {
   const home = 0;
   const construction =
-    document.getElementById('construction').getBoundingClientRect().top + window.scrollY;
-  const what = document.getElementById('what').getBoundingClientRect().top + window.scrollY;
-  const contact = document.getElementById('contact').getBoundingClientRect().top + window.scrollY;
+    document.getElementById('construction')?.getBoundingClientRect().top + window.scrollY ||
+    window.scrollY;
+  const what =
+    document.getElementById('what')?.getBoundingClientRect().top + window.scrollY ||
+    window.scrollY * 2;
+  const contact =
+    document.getElementById('contact')?.getBoundingClientRect().top + window.scrollY ||
+    window.scrollY * 3;
 
   const [isBlack, setIsBlack] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
